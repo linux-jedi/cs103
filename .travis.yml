@@ -1,0 +1,9 @@
+language: cpp
+compiler:
+- clang
+os:
+- linux
+- osx
+
+script:
+- for d in ./*/ ; do (cd "$d" && for p in ./*.cpp ; do (clang++ -Wall "$p" -o "$p".out ); done ); done
