@@ -4,6 +4,9 @@ compiler:
 os:
 - linux
 - osx
-
+notifications:
+  email:
+    on_success: never # default: change
+    on_failure: always # default: always
 script:
 - for d in ./*/ ; do (cd "$d" && for p in ./*.cpp ; do (clang++ -Wall "$p" -o "$p".out ); done ); done
